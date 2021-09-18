@@ -3,11 +3,10 @@
 const paragraph =
   "I love teaching. If you do not love teaching what else can you love. I love JavaScript if you do not love something which can give life to your application what else can you love.";
 
-function countWords(paragraph, word1, word2) {
+function countWord(paragraph, word1, word2) {
   let temp_paragraph = paragraph.split(" ");
   let word1_count = 0,
     word2_count = 0;
-  //   console.log(temp_paragraph);
   for (let i of temp_paragraph) {
     if (word1.toLowerCase() == i.toLowerCase()) {
       word1_count++;
@@ -23,14 +22,13 @@ function countWords(paragraph, word1, word2) {
   }
 }
 
-console.log(countWords(paragraph, "love", "you"));
+console.log(countWord(paragraph, "love", "you"));
 
 // 1.b. Write a function called cleanText. The function takes raw text as a parameter and returns the clean text.
 
 const sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`;
-
+var sentence1 = "";
 function cleanText(sentence) {
-  let sentence1 = " ";
   for (let i of sentence) {
     if (
       (i.charCodeAt() >= 65 && i.charCodeAt() <= 90) ||
@@ -60,12 +58,11 @@ function countWords(sentence) {
   return count;
 }
 
-const sentence = `I am a teacher and I love teaching. There is nothing as more rewarding as educating and empowering people. I found teaching more interesting than any other jobs. Does this motivate you to be a teacher?`;
-console.log(countWords(sentence));
+console.log(countWords(sentence1));
 
 // 1.d. How many words were used to construct this sentence. Now, don't exclude one letter words.
 
-function countWords(sentence) {
+function varietyOfWords(sentence) {
   let ws = sentence.split(" ");
   for (let w1 of ws) {
     let last = w1[w1.length - 1];
@@ -99,5 +96,5 @@ function countWords(sentence) {
   return count;
 }
 
-const sentence = `I am a teacher and I love teaching. There is nothing as more rewarding as educating and empowering people. I found teaching more interesting than any other jobs. Does this motivate you to be a teacher?`;
-console.log(countWords(sentence));
+//const sentence = `I am a teacher and I love teaching. There is nothing as more rewarding as educating and empowering people. I found teaching more interesting than any other jobs. Does this motivate you to be a teacher?`;
+console.log(varietyOfWords(sentence1));
