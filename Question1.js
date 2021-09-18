@@ -34,10 +34,10 @@ function cleanText(sentence) {
       (i.charCodeAt() >= 65 && i.charCodeAt() <= 90) ||
       (i.charCodeAt() >= 97 && i.charCodeAt() <= 122) ||
       i.charCodeAt() == 32 ||
-      i.charCodeAt() == 46
+      i.charCodeAt() == 46 ||
+      i.charCodeAt() == 63
     ) {
       sentence1 = sentence1 + i;
-      console.log;
     }
   }
   return sentence1;
@@ -46,8 +46,8 @@ console.log(cleanText(sentence));
 
 // 1.c. After cleaning the text in the sentence from question number b you will get the following text. Count the number of words in this text. Don't include words with only one letter.
 
-function countWords(sentence) {
-  let wordset = sentence.split(" ");
+function countWords(sentence1) {
+  let wordset = sentence1.split(" ");
   let count = 0;
   for (let word of wordset) {
     // console.log(word)
